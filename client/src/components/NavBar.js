@@ -1,14 +1,22 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom'
+
 import Navbar from 'react-bootstrap/NavBar';
 import Nav from 'react-bootstrap/Nav';
-
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Button from 'react-bootstrap/Button';
 
 
 
 const Component = () => {
+  const navigate = useNavigate()
   const [username, setUsername] = useState("aarushi")
+
+  const logOut = () => {
+    // Log out API request
+    // Redirect to home page
+    navigate('/login')
+  }
 
   return (
     <Navbar bg="light" expand="lg">
@@ -23,7 +31,7 @@ const Component = () => {
               
           <Nav>
             <Navbar.Text>Hi {username}</Navbar.Text>
-            <Nav.Item><Button>Log Out</Button></Nav.Item>
+            <Nav.Item><Button onClick={logOut}>Log Out</Button></Nav.Item>
           </Nav>
 
         </Navbar.Collapse>

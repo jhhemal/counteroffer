@@ -2,6 +2,9 @@ import {useEffect, useState} from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import NavBar from './components/NavBar';
+import LoginPage from './components/LoginPage'
+import SignupPage from './components/SignupPage'
+
 
 function App() {
 
@@ -23,7 +26,8 @@ function App() {
       <BrowserRouter>
         <NavBar />
           <Routes>
-
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/signup" element={<SignupPage />} />
           </Routes>
       </BrowserRouter>
     </div>
