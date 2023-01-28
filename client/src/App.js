@@ -1,23 +1,31 @@
-import logo from './logo.svg';
+import {useEffect, useState} from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
+import NavBar from './components/NavBar';
 
 function App() {
+
+  useEffect(() => {
+
+    // Fetch the username from the cookie
+    // async function fetch() {
+    //   await getUser().then((response) => {
+    //     if ("response is not null") {
+    //       setUser("INSERT USERNAME HERE");
+    //     }
+    //   })
+    // }
+    // fetch();
+
+  }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <NavBar />
+          <Routes>
+
+          </Routes>
+      </BrowserRouter>
     </div>
   );
 }
